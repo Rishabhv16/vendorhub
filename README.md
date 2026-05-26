@@ -6,7 +6,7 @@
 
 ## 🚀 Live Demo
 
-> Deploy on Vercel — [Coming Soon / Add your Vercel URL here]
+**[🌐 https://vendorhub-indol.vercel.app](https://vendorhub-indol.vercel.app)**
 
 ---
 
