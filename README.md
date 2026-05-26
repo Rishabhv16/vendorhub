@@ -1,36 +1,205 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ VendorHub — Multi-Vendor Marketplace Platform
 
-## Getting Started
+> A full-stack, production-ready multi-vendor e-commerce marketplace built with Next.js 16, Firebase, and AI-powered features.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Live Demo
+
+> Deploy on Vercel — [Coming Soon / Add your Vercel URL here]
+
+---
+
+## 📸 Overview
+
+**VendorHub** is a modern multi-vendor marketplace that connects **Buyers**, **Sellers**, and **Admins** on a single unified platform. Vendors can register, list products, and manage orders — while buyers enjoy a seamless shopping experience powered by AI-driven pricing suggestions and real-time data.
+
+---
+
+## ✨ Key Features
+
+### 🧑‍💼 Multi-Role System
+- **Buyer** — Browse products, wishlist items, add to cart, checkout, track orders, write reviews
+- **Seller/Vendor** — Register store, manage product listings, view sales analytics, handle order fulfillment
+- **Admin** — Approve/reject vendor applications, moderate the marketplace, oversee all activity
+
+### 🛒 Shopping Experience
+- Product catalog with search & category filters
+- Product detail pages with star ratings & reviews
+- Shopping cart drawer with quantity management
+- Checkout modal with **Razorpay** payment integration
+- Order tracking & history for buyers
+- Wishlist functionality
+
+### 🤖 AI-Powered Features
+- **AI Price Suggest** — Gemini AI analyzes product data to recommend optimal pricing for vendors
+- Smart product categorization
+
+### 🏪 Vendor Dashboard
+- Sales analytics with charts (Recharts)
+- Product management (add/edit/delete listings)
+- Order management with status updates
+- Revenue tracking
+
+### 🛡️ Admin Dashboard
+- Vendor approval workflow (Pending → Approved / Rejected)
+- Vendor profile modal with full registration details
+- Platform-wide product and order oversight
+
+### ⚡ Technical Highlights
+- Real-time updates with **Firebase Firestore**
+- Authentication with **Firebase Auth** (Email/Password + Google)
+- Smooth animations with **Framer Motion**
+- Global state management with **Zustand**
+- Fully typed with **TypeScript**
+- Responsive, mobile-first UI with **Tailwind CSS v4**
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Database | Firebase Firestore |
+| Auth | Firebase Authentication |
+| Payments | Razorpay |
+| AI | Google Gemini API |
+| State | Zustand |
+| Animations | Framer Motion |
+| UI Components | Radix UI |
+| Charts | Recharts |
+
+---
+
+## 📁 Project Structure
+
+```
+vendorhub/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── ai/price-suggest/   # Gemini AI pricing endpoint
+│   │   │   └── razorpay/           # Payment API routes
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── AdminDashboard.tsx      # Admin control panel
+│   │   ├── AuthModal.tsx           # Login / Register modal
+│   │   ├── BuyerHome.tsx           # Buyer marketplace feed
+│   │   ├── BuyerOrders.tsx         # Order history & tracking
+│   │   ├── CartDrawer.tsx          # Sliding cart sidebar
+│   │   ├── CheckoutModal.tsx       # Checkout & payment flow
+│   │   ├── LandingPage.tsx         # Public landing page
+│   │   ├── Navbar.tsx              # Top navigation
+│   │   ├── ProductCard.tsx         # Product listing card
+│   │   ├── ProductDetail.tsx       # Product detail view
+│   │   ├── ProfilePage.tsx         # User profile
+│   │   ├── SellerDashboard.tsx     # Vendor control panel
+│   │   ├── StarRating.tsx          # Review rating component
+│   │   ├── WishlistPage.tsx        # Saved items
+│   │   └── ...
+│   └── lib/
+│       ├── firebase.ts             # Firebase config
+│       ├── firebaseService.ts      # Firestore data layer
+│       └── store.ts                # Zustand global state
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- Firebase project
+- Razorpay account (for payments)
+- Google Gemini API key (for AI features)
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/vendorhub.git
+cd vendorhub
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Install dependencies
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Create environment variables
+cp .env.example .env.local
+# Fill in your credentials (see below)
 
-## Deploy on Vercel
+# Run development server
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Environment Variables
+
+Create a `.env.local` file with the following:
+
+```env
+# Firebase
+NEXT_PUBLIC_FIREBASE_API_KEY=your_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+
+# Razorpay
+RAZORPAY_KEY_ID=your_key_id
+RAZORPAY_KEY_SECRET=your_key_secret
+NEXT_PUBLIC_RAZORPAY_KEY_ID=your_key_id
+
+# Google Gemini AI
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+---
+
+## 🎯 User Flows
+
+### As a Buyer
+1. Land on the homepage → Sign up / Log in
+2. Browse products, filter by category, search
+3. View product details & read reviews
+4. Add to cart → Checkout with Razorpay
+5. Track order status in Order History
+
+### As a Seller
+1. Register as a Vendor (pending admin approval)
+2. Once approved → access Seller Dashboard
+3. Add products with AI price suggestions
+4. Manage incoming orders & update fulfillment status
+5. View revenue analytics
+
+### As an Admin
+1. Log in with admin credentials
+2. Review pending vendor applications
+3. Approve or reject with one click
+4. Monitor all platform activity
+
+---
+
+## 🏆 Built For
+
+This project was built as part of a hackathon to demonstrate a scalable, production-ready multi-vendor marketplace with modern tooling, real payments, and AI features.
+
+---
+
+## 📄 License
+
+MIT License — feel free to use, modify, and distribute.
+
+---
+
+## 👨‍💻 Author
+
+**Aditya Singh**
+- Email: adityasingh05.11.05@gmail.com
