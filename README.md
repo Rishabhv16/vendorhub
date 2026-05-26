@@ -203,4 +203,4 @@ MIT License — feel free to use, modify, and distribute.
 
 **Rishabh**
 - GitHub: [@Rishabhv16](https://github.com/Rishabhv16)
-- Email: rishab19v16@gmail.com
+- Email: rishabh19v16@gmail.com
