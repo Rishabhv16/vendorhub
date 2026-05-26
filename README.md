@@ -201,5 +201,6 @@ MIT License — feel free to use, modify, and distribute.
 
 ## 👨‍💻 Author
 
-**Aditya Singh**
-- Email: adityasingh05.11.05@gmail.com
+**Rishabh**
+- GitHub: [@Rishabhv16](https://github.com/Rishabhv16)
+- Email: rishab19v16@gmail.com
